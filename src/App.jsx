@@ -12,10 +12,10 @@ function App() {
     <>
     <Router>
         <Header />
-        {/* <Dashboard/> */}
+        <Dashboard/>
         {/* <OverviewReports/> */}
         {/* <ControlPanel/> */}
-        <SwitchAccount/>
+        {/* <SwitchAccount/> */}
         {/* <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/technology" element={<Technology />} />
