@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Table, Input, InputGroup, IconButton, Pagination } from "rsuite";
 import SearchIcon from "@rsuite/icons/Search";
-import { reportOverview } from "../../db";
+import { reportOverview } from "../db";
 import DatatableSort from "./DatatableSort";
 
 const { Column, HeaderCell, Cell } = Table;
@@ -41,27 +41,27 @@ function ReportDt() {
       >
         <Column flexGrow={1} minWidth={180} align="" sortable>
           <HeaderCell>Campaign Domain</HeaderCell>
-          <Cell dataKey="campaignDomain" />
+          <Cell dataKey="campaignDomain" verticalAlign="middle"/>
         </Column>
 
         <Column flexGrow={1} minWidth={180} sortable>
           <HeaderCell>Total Sessions</HeaderCell>
-          <Cell dataKey="totalSessions" />
+          <Cell dataKey="totalSessions" verticalAlign="middle"/>
         </Column>
 
         <Column flexGrow={1} minWidth={180} sortable>
           <HeaderCell>Mobile Sessions</HeaderCell>
-          <Cell dataKey="mobileSessions" />
+          <Cell dataKey="mobileSessions" verticalAlign="middle"/>
         </Column>
 
         <Column flexGrow={1} minWidth={180}>
           <HeaderCell>Desktop Sessions</HeaderCell>
-          <Cell dataKey="desktopSessions" />
+          <Cell dataKey="desktopSessions" verticalAlign="middle"/>
         </Column>
 
         <Column flexGrow={1} minWidth={180}>
           <HeaderCell>Desktop Sessions</HeaderCell>
-          <Cell dataKey="desktopSession" />
+          <Cell dataKey="desktopSession" verticalAlign="middle"/>
         </Column>
       </Table>
 

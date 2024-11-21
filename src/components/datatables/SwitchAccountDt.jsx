@@ -3,7 +3,7 @@ import { Table, Input, InputGroup, IconButton, Pagination } from "rsuite";
 import SearchIcon from "@rsuite/icons/Search";
 import ActionsCell from "./ActionsCell";
 import SwitchToCell from "./SwitchToCell";
-import { switchUsers } from "@/db";
+import { switchUsers } from "@/components/db";
 import DatatableSort from "./DatatableSort";
 
 const { Column, HeaderCell, Cell } = Table;
@@ -97,32 +97,32 @@ function SwitchAccountDt({ activeUserID, setActiveUserID, onSwitchAccount }) {
         >
           <Column flexGrow={1} minWidth={150} align="" sortable>
             <HeaderCell>User ID</HeaderCell>
-            <Cell dataKey="userID" />
+            <Cell dataKey="userID" verticalAlign="middle" />
           </Column>
 
           <Column flexGrow={1} minWidth={150} sortable>
             <HeaderCell>Name</HeaderCell>
-            <Cell dataKey="name" />
+            <Cell dataKey="name" verticalAlign="middle" />
           </Column>
 
           <Column flexGrow={1} minWidth={150} sortable>
             <HeaderCell>Email</HeaderCell>
-            <Cell dataKey="email" />
+            <Cell dataKey="email" verticalAlign="middle" />
           </Column>
 
           <Column flexGrow={1} minWidth={150}>
             <HeaderCell>Type</HeaderCell>
-            <Cell dataKey="type" />
+            <Cell dataKey="type" verticalAlign="middle" />
           </Column>
 
           <Column flexGrow={1} minWidth={150}>
             <HeaderCell>Fb A/c Count</HeaderCell>
-            <Cell dataKey="FbCount" />
+            <Cell dataKey="FbCount" verticalAlign="middle" />
           </Column>
 
           <Column flexGrow={1} minWidth={150}>
             <HeaderCell>Last Logged In</HeaderCell>
-            <Cell dataKey="lastLogged" />
+            <Cell dataKey="lastLogged" verticalAlign="middle" />
           </Column>
 
           <Column flexGrow={1} minWidth={50}>

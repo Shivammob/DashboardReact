@@ -13,7 +13,7 @@ function DatatableSort(data, itemsPerPage = 10) {
     if (!searchKeyword) return data;
     return data.filter((item) =>
       Object.values(item).some((val) =>
-        String(val).toLowerCase().includes(searchKeyword.toLowerCase())
+        String(val).toLowerCase().includes(searchKeyword.toLowerCase()),
       )
     );
   }, [data, searchKeyword]);

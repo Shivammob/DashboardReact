@@ -10,10 +10,10 @@ import rpc from "@/assets/images/rpc.svg";
 import clicks from "@/assets/images/clicks.svg";
 import searches from "@/assets/images/searches.svg";
 import search from "@/assets/images/search.svg";
-import RpcRevenueBar from "./components/charts/RpcRevenueBar";
+import RpcRevenueBar from "./charts/RpcRevenueBar";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import DateRangePick from "./DateRangePick";
-import ReportDt from "./components/datatables/ReportDt";
+import ReportDt from "./datatables/ReportDt";
 
 function OverviewReports() {
   const [show, setShow] = useState(false);

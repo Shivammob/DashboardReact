@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Card, Col, Container, Row, Toast } from "react-bootstrap";
-import refresh from "@/assets/images/refresh.svg";
+import { Card, Col, Container, Dropdown, Row, Toast } from "react-bootstrap";
 import search from "@/assets/images/search.svg";
-import SwitchAccountDt from "./components/datatables/SwitchAccountDt";
+import SwitchAccountDt from "./datatables/SwitchAccountDt";
+import SettingTab from "./tab/SettingTab";
 
 
 function SwitchAccount() {
@@ -24,49 +24,7 @@ function SwitchAccount() {
           <Row className="">
             <Col className="">
               <div className="switch">
-                <div className="switch-heading d-flex justify-content-between flex-wrap mb-4">
-                  <h1 className="mb-0">Settings</h1>
-                  <a
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
-                    className="me-2"
-                  >
-                    <img src={refresh} alt="refresh" className="img-fluid" />
-                  </a>
-                </div>
-                <div className="nav-lists bg-grey mb-4 p-3 p-md-4">
-                  <ul className="bg-white d-flex align-items-center p-0 mb-0">
-                    <li>
-                      <a href="#" onClick={(e) => e.preventDefault()}>
-                        Account
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" onClick={(e) => e.preventDefault()}>
-                        Control Panel
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        className="active"
-                      >
-                        Switch Account
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" onClick={(e) => e.preventDefault()}>
-                        Performance Report
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" onClick={(e) => e.preventDefault()}>
-                        Change Password
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                <SettingTab/>
               </div>
               <div className="switch-acc position-relative mb-4">
                 <Card className="">
@@ -86,37 +44,26 @@ function SwitchAccount() {
                             className="img-fluid pe-3"
                           />
                         </a>
-                        <div className="dropdown">
-                          <button
-                            className="bg-transparent"
+                        <Dropdown>
+                          <Dropdown.Toggle
+                            className="bg-transparent no-caret border-0 p-0 text-reset"
                             type="button"
-                            id="campaignDropdown"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
+                            id="actionsDropdown"
                           >
                             <i className="fa-solid fa-ellipsis-vertical"></i>
-                          </button>
-                          <ul
-                            className="dropdown-menu"
-                            aria-labelledby="campaignDropdown"
-                          >
-                            <li>
-                              <a className="dropdown-item" href="#">
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                              <Dropdown.Item className="" href="#">
                                 Action
-                              </a>
-                            </li>
-                            <li>
-                              <a className="dropdown-item" href="#">
+                              </Dropdown.Item>
+                              <Dropdown.Item className="" href="#">
                                 Another action
-                              </a>
-                            </li>
-                            <li>
-                              <a className="dropdown-item" href="#">
+                              </Dropdown.Item>
+                              <Dropdown.Item className="" href="#">
                                 Something else here
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
+                              </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
                     <SwitchAccountDt

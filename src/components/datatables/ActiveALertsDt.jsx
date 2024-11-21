@@ -3,12 +3,12 @@ import { Table, Input, InputGroup, IconButton, Pagination } from "rsuite";
 import SearchIcon from "@rsuite/icons/Search";
 import StatusCell from "./StatusCell";
 import ActionsCell from "./ActionsCell";
-import { controlPanelUser } from "@/components/db";
+import { activeAlerts } from "@/components/db";
 import DatatableSort from "./DatatableSort";
 
 const { Column, HeaderCell, Cell } = Table;
 
-function ControlPanelDt() {
+function ActiveAlertsDt() {
   const itemsPerPage = 10;
   const {
     paginatedData,
@@ -20,7 +20,7 @@ function ControlPanelDt() {
     sortColumn,
     sortType,
     totalItems,
-  } = DatatableSort(controlPanelUser, itemsPerPage);
+  } = DatatableSort(activeAlerts, itemsPerPage);
 
   return (
     <div className="table-responsive">
@@ -32,8 +32,7 @@ function ControlPanelDt() {
         />
         <IconButton icon={<SearchIcon />} appearance="subtle" />
       </InputGroup>
-      <Table
-        // height={400}
+      <Table rowHeight={60}
         data={paginatedData}
         sortColumn={sortColumn}
         sortType={sortType}
@@ -41,45 +40,47 @@ function ControlPanelDt() {
         className="table stripe table-hover text-nowrap cst-table"
         height={400}
       >
-        <Column flexGrow={1} minWidth={150} align="" sortable>
-          <HeaderCell>User ID</HeaderCell>
-          <Cell dataKey="userID" verticalAlign="middle" />
+        <Column flexGrow={1} minWidth={150} sortable>
+          <HeaderCell>Sr. No.</HeaderCell>
+          <Cell dataKey="srno" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={150} sortable>
-          <HeaderCell>Name</HeaderCell>
-          <Cell dataKey="name" verticalAlign="middle" />
+          <HeaderCell>Campaign Name</HeaderCell>
+          <Cell dataKey="campaignName" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={150} sortable>
-          <HeaderCell>Email</HeaderCell>
-          <Cell dataKey="email" verticalAlign="middle" />
+          <HeaderCell>Alert Type</HeaderCell>
+          <Cell dataKey="alertType" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={150}>
-          <HeaderCell>Type</HeaderCell>
-          <Cell dataKey="type" verticalAlign="middle" />
+          <HeaderCell>Alert Param</HeaderCell>
+          <Cell dataKey="alertParam" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={150}>
-          <HeaderCell>Fb A/c Count</HeaderCell>
-          <Cell dataKey="FbCount" verticalAlign="middle" />
+          <HeaderCell>Alert Value</HeaderCell>
+          <Cell dataKey="alertValue" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={150}>
-          <HeaderCell>Last Logged In</HeaderCell>
-          <Cell dataKey="lastLogged" verticalAlign="middle" />
-        </Column>
-
-        <Column flexGrow={1} minWidth={150}>
-          <HeaderCell>Status</HeaderCell>
-          <StatusCell dataKey="status" />
+          <HeaderCell>Alert Date & Time</HeaderCell>
+          <Cell dataKey="alertDateTime" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={150}>
           <HeaderCell>Actions</HeaderCell>
-          <ActionsCell dataKey="actions" />
+          <Cell dataKey="actions" verticalAlign="middle"><a
+          href="#"
+          onClick={(e) => e.preventDefault()}
+          className="ms-2 btn redbtn py-1"
+        >
+          Close
+        </a></Cell>
         </Column>
+
       </Table>
 
       {/* Pagination */}
@@ -91,7 +92,7 @@ function ControlPanelDt() {
         maxButtons={5}
         size="sm"
         layout={["total", "-", "pager", "-", "limit"]}
-        total={controlPanelUser.length}
+        total={activeAlerts.length}
         limit={itemsPerPage}
         activePage={currentPage}
         onChangePage={setCurrentPage}
@@ -100,4 +101,4 @@ function ControlPanelDt() {
   );
 }
 
-export default ControlPanelDt;
+export default ActiveAlertsDt;

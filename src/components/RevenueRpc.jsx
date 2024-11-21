@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row, Tab, Tabs } from "react-bootstrap";
 import info from "@/assets/images/info.svg";
 import redDown from "@/assets/images/red_down.svg";
-import Revenue from "./components/charts/Revenue";
+import Revenue from "./charts/Revenue";
 import greenup from "@/assets/images/greenup.svg";
 
 function RevenueRpc() {

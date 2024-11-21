@@ -8,11 +8,11 @@ import revenue from "@/assets/images/revenue.svg";
 import searches from "@/assets/images/searches.svg";
 import rpc from "@/assets/images/rpc.svg";
 import clicks from "@/assets/images/clicks.svg";
-import PerformanceCompare from "./components/charts/PerformanceCompare";
-import TotalRevenue from "./components/charts/TotalRevenue";
-import TeamReport from "./components/charts/TeamReport";
-import PerformanceDonut from "./components/charts/PerformanceDonut";
-import RevenueRpc from "./RevenueRpc";
+import PerformanceCompare from "./charts/PerformanceCompare";
+import TotalRevenue from "./charts/TotalRevenue";
+import TeamReport from "./charts/TeamReport";
+import PerformanceDonut from "./charts/PerformanceDonut";
+import RevenueRpc from "../components/RevenueRpc";
 import CustomSelect from "./CustomSelect";
 
 

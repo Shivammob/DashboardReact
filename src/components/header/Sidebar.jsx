@@ -61,18 +61,12 @@ function Sidebar() {
               />
               Dashboard
             </NavLink>
-            <NavLink
-              className="sidebar-menu-list-item collapsable collapsed"
+            <button
+              className={`sidebar-menu-list-item w-100 collapsable collapsed ${openSection.section1 ? "active" : ""}`}
               type="button"
-            //   data-bs-toggle="collapse"
-            //   data-bs-target="#collapseOne"
-            //   aria-expanded="false"
-            //   aria-controls="collapseOne"
               onClick={() => sectionCollapse('section1')}
               aria-controls="collapseOne"
-              aria-expanded={openSection.section1}
-              to="/yo"
-            >
+              aria-expanded={openSection.section1}>
               <img
                 src={campaign}
                 alt="campaign"
@@ -84,37 +78,35 @@ function Sidebar() {
                 className="img-fluid me-2 menu-icon img2"
               />
               Campaign
-            </NavLink>
+            </button>
             <Collapse in={openSection.section1} >
               <ul className="sidebar-menu-list-sub" id="collapseOne">
                 <li>
-                  <NavLink to="#" onClick={(e) => e.preventDefault()} className="active">
+                  <NavLink to="/campaign/overview">
                     Overview
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="#" onClick={(e) => e.preventDefault()}>SubId</NavLink>
+                  <NavLink to="/campaign/subid">SubId</NavLink>
                 </li>
                 <li>
-                  <NavLink to="#" onClick={(e) => e.preventDefault()}>Hourly</NavLink>
+                  <NavLink to="/campaign/hourly">Hourly</NavLink>
                 </li>
                 <li>
-                  <NavLink to="#" onClick={(e) => e.preventDefault()}>Timeframe</NavLink>
+                  <NavLink to="/campaign/timeframe">Timeframe</NavLink>
                 </li>
                 <li>
-                  <NavLink to="#" onClick={(e) => e.preventDefault()}>Campaign (FB)</NavLink>
+                  <NavLink to="/campaign/campaignfb">Campaign (FB)</NavLink>
                 </li>
               </ul>
             </Collapse>
 
-            <NavLink
-              className="sidebar-menu-list-item collapsable collapsed"
+            <button
+              className={`sidebar-menu-list-item w-100 collapsable collapsed ${openSection.section2 ? "active" : ""}`}
               type="button"
               onClick={() => sectionCollapse('section2')}
               aria-controls="collapseTwo"
-              aria-expanded={openSection.section2}
-              to="/reports"
-            >
+              aria-expanded={openSection.section2}>
               <img
                 src={report}
                 alt="report"
@@ -126,29 +118,30 @@ function Sidebar() {
                 className="img-fluid me-2 menu-icon img2"
               />
               Reports
-            </NavLink>
+            </button>
             <Collapse in={openSection.section2} id="collapseTwo">
               <ul className="sidebar-menu-list-sub">
                 <li>
-                  <NavLink to="/reports/overview" onClick={(e) => e.preventDefault()} className="active">
+                  <NavLink to="/reports/overview">
                     Overview
                   </NavLink>
                 </li>
                 <li>
-                  <a href="#" onClick={(e) => e.preventDefault()}>SubId</a>
+                  <NavLink to="/reports/subid">SubId</NavLink>
                 </li>
                 <li>
-                  <a href="#" onClick={(e) => e.preventDefault()}>Hourly</a>
+                  <NavLink to="/reports/hourly">Hourly</NavLink>
                 </li>
                 <li>
-                  <a href="#" onClick={(e) => e.preventDefault()}>Timeframe</a>
+                  <NavLink to="/reports/timeframe">Timeframe</NavLink>
                 </li>
                 <li>
-                  <a href="#" onClick={(e) => e.preventDefault()}>Campaign (FB)</a>
+                  <NavLink to="/reports/campaign">Campaign (FB)</NavLink>
                 </li>
               </ul>
+              {/* <Outlet /> */}
             </Collapse>
-            <NavLink to="/cc" className="sidebar-menu-list-item">
+            <NavLink to="/performance-report" className="sidebar-menu-list-item">
               <img
                 src={facebook}
                 alt="facebook cebo"
@@ -282,7 +275,7 @@ function Sidebar() {
             </div>
           </div>
           <div className="sidebar-menu-list mb-2">
-            <NavLink to="/switch-account" className="sidebar-menu-list-item">
+            <NavLink to="/active-alerts" className="sidebar-menu-list-item">
               <img
                 src={addNewAccount}
                 alt="add new account"
@@ -297,7 +290,7 @@ function Sidebar() {
             </NavLink>
           </div>
           <div className="sidebar-menu-list mb-2">
-            <a href="#" onClick={(e) => e.preventDefault()} className="sidebar-menu-list-item">
+            <NavLink to="/change-password" className="sidebar-menu-list-item">
               <img
                 src={logOut}
                 alt="logout account"
@@ -309,7 +302,7 @@ function Sidebar() {
                 className="img-fluid me-2 menu-icon img2"
               />
               Logout Account
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
