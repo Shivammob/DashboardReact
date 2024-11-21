@@ -502,15 +502,7 @@ main {
                 box-shadow: none;
                 padding: 12px 8px;
 
-                // &[aria-expanded="true"] {
-                //     color: $color-white;
-                //     .img1 {
-                //         display: none;
-                //     }
-                //     .img2 {
-                //         display: block;
-                //     }
-                // }
+               
 
                 .img2 {
                     display: none;
@@ -534,6 +526,8 @@ main {
                     margin: 0;
                 }
 
+                
+
                 &.collapsable {
                     &.active {
                         background-color: transparent;
@@ -543,6 +537,7 @@ main {
                     &:hover {
                         &:after {
                             color: $color-white;
+                            transform: rotate(0deg);
                         }
                     }
 
@@ -552,13 +547,9 @@ main {
                         font-family: FontAwesome;
                         background-image: unset;
                         margin-left: auto;
+                        transform: rotate(180deg);
                     }
 
-                    &.collapsed {
-                        &:after {
-                            transform: rotate(-180deg);
-                        }
-                    }
                 }
             }
 

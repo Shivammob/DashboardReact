@@ -22,7 +22,7 @@ import { NavLink } from "react-router-dom";
 
 
 function Sidebar() {
-    const [openSection, setOpenSection] = useState({section1: false, section2: false});
+    const [openSection, setOpenSection] = useState({section1: false, section2: false, section3: false});
    
     const [isChecked, setIsChecked] = useState(false);
     
@@ -137,6 +137,47 @@ function Sidebar() {
                 </li>
                 <li>
                   <NavLink to="/reports/campaign">Campaign (FB)</NavLink>
+                </li>
+              </ul>
+              {/* <Outlet /> */}
+            </Collapse>
+
+            <button
+              className={`sidebar-menu-list-item w-100 collapsable collapsed ${openSection.section3 ? "active" : ""}`}
+              type="button"
+              onClick={() => sectionCollapse('section3')}
+              aria-controls="collapseThree"
+              aria-expanded={openSection.section3}>
+              <img
+                src={report}
+                alt="report"
+                className="img-fluid me-2 menu-icon img1"
+              />
+              <img
+                src={reportHover}
+                alt="report"
+                className="img-fluid me-2 menu-icon img2"
+              />
+              Inventories
+            </button>
+            <Collapse in={openSection.section3} id="collapseThree">
+              <ul className="sidebar-menu-list-sub">
+                <li>
+                  <NavLink to="/inventories/overview">
+                    Overview
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/inventories/subid">SubId</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/inventories/hourly">Hourly</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/inventories/timeframe">Timeframe</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/inventories/campaign">Campaign (FB)</NavLink>
                 </li>
               </ul>
               {/* <Outlet /> */}

@@ -7,6 +7,7 @@ import SwitchAccount from './components/SwitchAccount';
 import PerformanceReport from './components/PerformanceReport';
 import ChangePassword from './components/ChangePassword';
 import ActiveAlerts from './components/ActiveAlerts';
+import InventoriesOverview from './components/InventoriesOverview';
 
 function App() {
  
@@ -23,6 +24,7 @@ function App() {
           <Route path="/performance-report" element={<PerformanceReport />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/active-alerts" element={<ActiveAlerts />} />
+          <Route path="/inventories/overview" element={<InventoriesOverview />} />
         </Routes>
         {/* <Footer/> */}
       </Router>
