@@ -17,6 +17,7 @@ import InventoriesOverview from "./components/InventoriesOverview";
 import SignIn from "./components/SignIn";
 import Footer from "./components/footer/Footer";
 import SigninHeader from "./components/header/SigninHeader";
+import ArticleEditors from "./components/ArticleEditors";
 
 function App() {
   const location = useLocation();
@@ -34,6 +35,7 @@ function App() {
           <Route path="/performance-report" element={<PerformanceReport />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/active-alerts" element={<ActiveAlerts />} />
+          <Route path="/article-editors" element={<ArticleEditors />} />
           <Route
             path="/inventories/overview"
             element={<InventoriesOverview />}

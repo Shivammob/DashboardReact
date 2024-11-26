@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function SettingTab() {
   return (
     <>
-      <div className="controlpanel-heading d-flex justify-content-between flex-wrap mb-4">
+      <div className="d-flex justify-content-between flex-wrap mb-4">
         <h1 className="mb-0">Settings</h1>
         <a href="#" onClick={(e) => e.preventDefault()} className="me-2">
           <img src={refresh} alt="refresh" className="img-fluid" />

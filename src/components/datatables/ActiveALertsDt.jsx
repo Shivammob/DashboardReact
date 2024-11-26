@@ -4,7 +4,7 @@ import SearchIcon from "@rsuite/icons/Search";
 import StatusCell from "./StatusCell";
 import ActionsCell from "./ActionsCell";
 import { activeAlerts } from "@/components/db";
-import DatatableSort from "./DatatableSort";
+import useDatatableSort from "@/components/hooks/useDatatableSort";
 
 const { Column, HeaderCell, Cell } = Table;
 
@@ -20,7 +20,7 @@ function ActiveAlertsDt() {
     sortColumn,
     sortType,
     totalItems,
-  } = DatatableSort(activeAlerts, itemsPerPage);
+  } = useDatatableSort(activeAlerts, itemsPerPage);
 
   return (
     <div className="table-responsive">

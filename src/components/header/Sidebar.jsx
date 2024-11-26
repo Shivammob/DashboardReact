@@ -168,7 +168,7 @@ function Sidebar() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/change-password">SubId</NavLink>
+                  <NavLink to="/article-editors">SubId</NavLink>
                 </li>
                 <li>
                   <NavLink to="/inventories/hourly">Hourly</NavLink>

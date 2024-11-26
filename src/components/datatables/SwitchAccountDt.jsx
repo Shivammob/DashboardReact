@@ -4,7 +4,7 @@ import SearchIcon from "@rsuite/icons/Search";
 import ActionsCell from "./ActionsCell";
 import SwitchToCell from "./SwitchToCell";
 import { switchUsers } from "@/components/db";
-import DatatableSort from "./DatatableSort";
+import useDatatableSort from "@/components/hooks/useDatatableSort";
 
 const { Column, HeaderCell, Cell } = Table;
 
@@ -73,7 +73,7 @@ function SwitchAccountDt({ activeUserID, setActiveUserID, onSwitchAccount }) {
     sortColumn,
     sortType,
     totalItems,
-  } = DatatableSort(switchUsers, itemsPerPage);
+  } = useDatatableSort(switchUsers, itemsPerPage);
 
   return (
     <>

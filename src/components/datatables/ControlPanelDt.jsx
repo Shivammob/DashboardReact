@@ -4,7 +4,7 @@ import SearchIcon from "@rsuite/icons/Search";
 import StatusCell from "./StatusCell";
 import ActionsCell from "./ActionsCell";
 import { controlPanelUser } from "@/components/db";
-import DatatableSort from "./DatatableSort";
+import useDatatableSort from "@/components/hooks/useDatatableSort";
 
 const { Column, HeaderCell, Cell } = Table;
 
@@ -20,7 +20,7 @@ function ControlPanelDt() {
     sortColumn,
     sortType,
     totalItems,
-  } = DatatableSort(controlPanelUser, itemsPerPage);
+  } = useDatatableSort(controlPanelUser, itemsPerPage);
 
   return (
     <div className="table-responsive">

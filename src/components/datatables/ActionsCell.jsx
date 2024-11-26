@@ -8,18 +8,17 @@ const DropdownPortal = ({ children }) =>
   ReactDOM.createPortal(children, document.body);
 
 
-function ActionsCell({ rowData, dataKey, ...props }) {
+function ActionsCell({ rowData, dataKey, clickHandle, ...props}) {
+  
   return (
-    <Cell {...props} className="text-center">
+    <Cell {...props} className="text-center msss">
       <ul className="mb-0 ps-0 pe-4 d-flex align-items-center">
         <li className="pe-4">
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="text-reset"
-          >
+          <button
+            onClick={clickHandle}
+            className="text-reset bg-transparent">
             <i className="fa-solid fa-pen"></i>
-          </a>
+          </button>
         </li>
         <li className="pe-4">
           <a

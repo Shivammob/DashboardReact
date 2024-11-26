@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 
-function DatatableSort(data, itemsPerPage = 10) {
+function useDatatableSort(data, itemsPerPage = 10) {
   const [searchKeyword, setSearchKeyword] = useState("");
   const [sortColumn, setSortColumn] = useState(null);
   const [sortType, setSortType] = useState(null);
@@ -68,4 +68,4 @@ function DatatableSort(data, itemsPerPage = 10) {
   };
 }
 
-export default DatatableSort;
+export default useDatatableSort;
