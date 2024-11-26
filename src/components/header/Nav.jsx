@@ -12,7 +12,7 @@ function Nav() {
   return (
     <Navbar
       expand="lg"
-      className="navbar navbar-light p-0 pb-2 pb-md-0 mb-4 bg-white"
+      className="navbar-light p-0 pb-2 pb-md-0 mb-4 bg-white"
     >
       <Container fluid className="g-0 d-block">
         <Row className="flex-md-nowrap">

@@ -168,7 +168,7 @@ function Sidebar() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/inventories/subid">SubId</NavLink>
+                  <NavLink to="/change-password">SubId</NavLink>
                 </li>
                 <li>
                   <NavLink to="/inventories/hourly">Hourly</NavLink>
@@ -331,7 +331,7 @@ function Sidebar() {
             </NavLink>
           </div>
           <div className="sidebar-menu-list mb-2">
-            <NavLink to="/change-password" className="sidebar-menu-list-item">
+            <NavLink to="/sign-in" className="sidebar-menu-list-item">
               <img
                 src={logOut}
                 alt="logout account"

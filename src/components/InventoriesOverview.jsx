@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Dropdown, Row } from "react-bootstrap";
+import { Card, Col, Container, Dropdown, Row } from "react-bootstrap";
 import fmr from "@/assets/images/fmr.jpg";
 import copy from "@/assets/images/copy.svg";
 
@@ -21,8 +21,8 @@ function InventoriesOverview() {
               <div className="inventories">
                 <Row>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -100,12 +100,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -183,12 +183,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -266,12 +266,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -349,12 +349,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -432,12 +432,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -515,12 +515,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -598,12 +598,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -681,12 +681,12 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                   <Col sm={6} md={4} className="mb-4">
-                    <div className="card">
-                      <div className="card-body">
+                    <Card className="">
+                      <Card.Body className="">
                         <div className="inventories-head d-flex align-items-start justify-content-between mb-3">
                           <div className="inventories-head-left d-flex align-items-center">
                             <img
@@ -764,8 +764,8 @@ function InventoriesOverview() {
                             View More
                           </a>
                         </div>
-                      </div>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </Col>
                 </Row>
               </div>
