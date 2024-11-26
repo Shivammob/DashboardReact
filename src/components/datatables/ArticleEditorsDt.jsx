@@ -22,7 +22,8 @@ function ArticleEditorsDt({clickHandle}) {
   } = useDatatableSort(articleEditors, itemsPerPage);
 
   return (
-    <div className="table-responsive">
+    <>
+        <div className="table-responsive">
       <InputGroup inside className="mb-4 rs-dt-search">
         <Input
           placeholder="Search..."
@@ -116,6 +117,7 @@ function ArticleEditorsDt({clickHandle}) {
         </Column>
       </Table>
 
+
       {/* Pagination */}
       <Pagination
         prev
@@ -131,6 +133,8 @@ function ArticleEditorsDt({clickHandle}) {
         onChangePage={setCurrentPage}
       />
     </div>
+
+    </>
   );
 }
 
