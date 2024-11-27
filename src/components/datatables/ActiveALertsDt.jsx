@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Table, Input, InputGroup, IconButton, Pagination } from "rsuite";
 import SearchIcon from "@rsuite/icons/Search";
-import StatusCell from "./StatusCell";
-import ActionsCell from "./ActionsCell";
 import { activeAlerts } from "@/components/db";
 import useDatatableSort from "@/components/hooks/useDatatableSort";
 

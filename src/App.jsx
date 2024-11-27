@@ -18,6 +18,8 @@ import SignIn from "./components/SignIn";
 import Footer from "./components/footer/Footer";
 import SigninHeader from "./components/header/SigninHeader";
 import ArticleEditors from "./components/ArticleEditors";
+import AddNewArticle from "./components/AddNewArticle";
+import AdAccountManagement from "./components/AdAccountManagement";
 
 function App() {
   const location = useLocation();
@@ -36,10 +38,9 @@ function App() {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/active-alerts" element={<ActiveAlerts />} />
           <Route path="/article-editors" element={<ArticleEditors />} />
-          <Route
-            path="/inventories/overview"
-            element={<InventoriesOverview />}
-          />
+          <Route path="/inventories/overview" element={<InventoriesOverview />}/>
+          <Route path="/add-new-article" element={<AddNewArticle />}/>
+          <Route path="/ad-account-management" element={<AdAccountManagement />}/>
           <Route path="/sign-in" element={<SignIn />} />
         </Routes>
         {isSignInPage && <Footer/>}

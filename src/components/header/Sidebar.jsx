@@ -171,10 +171,10 @@ function Sidebar() {
                   <NavLink to="/article-editors">SubId</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/inventories/hourly">Hourly</NavLink>
+                  <NavLink to="/add-new-article">Hourly</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/inventories/timeframe">Timeframe</NavLink>
+                  <NavLink to="/ad-account-management">Timeframe</NavLink>
                 </li>
                 <li>
                   <NavLink to="/inventories/campaign">Campaign (FB)</NavLink>

@@ -778,3 +778,61 @@ export const articleEditors = [
     actions: "",
   },
 ]
+
+
+export const adAccountManagement = [
+  {
+    platform: "Facebook",
+    adAccountName: "Account 5",
+    usersName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    platform: "Google",
+    adAccountName: "Account 1",
+    usersName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    platform: "Text",
+    adAccountName: "Text",
+    usersName: "Text",
+    actions: "",
+  },
+  {
+    platform: "Facebook",
+    adAccountName: "Account 5",
+    usersName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    platform: "Google",
+    adAccountName: "Account 1",
+    usersName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    platform: "Text",
+    adAccountName: "Text",
+    usersName: "Text",
+    actions: "",
+  },
+  {
+    platform: "Facebook",
+    adAccountName: "Account 5",
+    usersName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    platform: "Google",
+    adAccountName: "Account 1",
+    usersName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    platform: "Text",
+    adAccountName: "Text",
+    usersName: "Text",
+    actions: "",
+  },
+]
