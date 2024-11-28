@@ -10,9 +10,9 @@ const AddNewAccountModal = ({ showmodal, handleClose }) => {
       aria-labelledby="addNewAccountLabel"
     >
       <Modal.Header closeButton>
-        <Modal.Title id="addNewAccountLabel" className="mb-2">
-        <h5 class="modal-title font-600 mb-2" id="addNewAccountLabel">Add New Account</h5>
-        <p class="mb-0 font-12">Set up an ad account and assign users.</p>
+        <Modal.Title id="addNewAccountLabel">
+        <h5 className="modal-title font-600 mb-1">Add New Account</h5>
+        <p className="mb-0 font-12 font-400">Set up an ad account and assign users.</p>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

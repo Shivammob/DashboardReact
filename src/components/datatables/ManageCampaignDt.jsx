@@ -1,14 +1,12 @@
 import React from "react";
 import { Table, Input, InputGroup, IconButton, Pagination } from "rsuite";
 import SearchIcon from "@rsuite/icons/Search";
-import { adAccountManagement } from "@/components/db";
+import { manageCampaign } from "@/components/db";
 import useDatatableSort from "@/components/hooks/useDatatableSort";
-import users from "@/assets/images/users.svg"
-import manageCampaign from "@/assets/images/manage_campaign.svg"
 
 const { Column, HeaderCell, Cell } = Table;
 
-function AdAccountManagementDt() {
+function ManageCampaignDt() {
   const itemsPerPage = 10;
   const {
     paginatedData,
@@ -20,7 +18,7 @@ function AdAccountManagementDt() {
     sortColumn,
     sortType,
     totalItems,
-  } = useDatatableSort(adAccountManagement, itemsPerPage);
+  } = useDatatableSort(manageCampaign, itemsPerPage);
 
   return (
     <div className="table-responsive">
@@ -32,59 +30,35 @@ function AdAccountManagementDt() {
         />
         <IconButton icon={<SearchIcon />} appearance="subtle" />
       </InputGroup>
-      <Table
-        rowHeight={60}
+      <Table rowHeight={60}
         data={paginatedData}
         sortColumn={sortColumn}
         sortType={sortType}
         onSortColumn={handleSortColumn}
         className="table stripe table-hover text-nowrap cst-table"
-        height={400}
-      >
+        height={400}>
         <Column flexGrow={1} minWidth={150} sortable>
-          <HeaderCell>Platform</HeaderCell>
-          <Cell dataKey="platform" verticalAlign="middle" />
+          <HeaderCell>Account Name</HeaderCell>
+          <Cell dataKey="accountName" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={150} sortable>
-          <HeaderCell>Ad Account Name</HeaderCell>
-          <Cell dataKey="adAccountName" verticalAlign="middle" />
+          <HeaderCell>Campaign ID</HeaderCell>
+          <Cell dataKey="campaignID" verticalAlign="middle" />
         </Column>
 
         <Column flexGrow={1} minWidth={300} sortable>
-          <HeaderCell>Users Name</HeaderCell>
-          <Cell dataKey="usersName" verticalAlign="middle" />
+          <HeaderCell>Campaign Name</HeaderCell>
+          <Cell dataKey="campaignName" verticalAlign="middle" />
         </Column>
 
-        <Column flexGrow={1} minWidth={400}>
+        <Column minWidth={100}>
           <HeaderCell>Actions</HeaderCell>
           <Cell dataKey="actions" verticalAlign="middle">
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="btn assignbtn me-2"
-            >
-              <img
-                src={users}
-                alt="assign user"
-                className="img-fluid me-1"
-              />{" "}
-              Assign User
-            </a>
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="btn assignbtn"
-            >
-              <img
-                src={manageCampaign}
-                alt="manage campaign"
-                className="img-fluid me-1"
-              />{" "}
-              Manage Campaign
-            </a>
+          <a href="#" onClick={(e) => e.preventDefault()} className=""> Edit</a>
           </Cell>
         </Column>
+
       </Table>
 
       {/* Pagination */}
@@ -96,7 +70,7 @@ function AdAccountManagementDt() {
         maxButtons={5}
         size="sm"
         layout={["total", "-", "pager", "-", "limit"]}
-        total={adAccountManagement.length}
+        total={manageCampaign.length}
         limit={itemsPerPage}
         activePage={currentPage}
         onChangePage={setCurrentPage}
@@ -105,4 +79,4 @@ function AdAccountManagementDt() {
   );
 }
 
-export default AdAccountManagementDt;
+export default ManageCampaignDt;

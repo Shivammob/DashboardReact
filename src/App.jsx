@@ -20,6 +20,8 @@ import SigninHeader from "./components/header/SigninHeader";
 import ArticleEditors from "./components/ArticleEditors";
 import AddNewArticle from "./components/AddNewArticle";
 import AdAccountManagement from "./components/AdAccountManagement";
+import ManageCampaign from "./components/ManageCampaign";
+import AssignUsers from "./components/AssignUsers";
 
 function App() {
   const location = useLocation();
@@ -41,6 +43,8 @@ function App() {
           <Route path="/inventories/overview" element={<InventoriesOverview />}/>
           <Route path="/add-new-article" element={<AddNewArticle />}/>
           <Route path="/ad-account-management" element={<AdAccountManagement />}/>
+          <Route path="/manage-campaign" element={<ManageCampaign />}/>
+          <Route path="/assign-user" element={<AssignUsers />}/>
           <Route path="/sign-in" element={<SignIn />} />
         </Routes>
         {isSignInPage && <Footer/>}

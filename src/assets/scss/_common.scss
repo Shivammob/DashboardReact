@@ -1282,3 +1282,21 @@ table {
     height: auto !important;
     position: relative; /* To ensure dropdown positions correctly */
   }
+
+  .select__value-container.select__value-container--is-multi{
+    align-items: start;
+    width: 60vw;
+    height: 140px;
+  }
+
+  .select__indicators.css-1wy0on6 {
+    align-items: start;
+  }
+
+
+  @media only screen and (max-width: 475px) {
+    .select__value-container.select__value-container--is-multi{
+        width: 100%;
+        height: 100%;
+      }
+  }

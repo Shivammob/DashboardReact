@@ -82,12 +82,12 @@ function Sidebar() {
             <Collapse in={openSection.section1} >
               <ul className="sidebar-menu-list-sub" id="collapseOne">
                 <li>
-                  <NavLink to="/campaign/overview">
+                  <NavLink to="/manage-campaign">
                     Overview
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/campaign/subid">SubId</NavLink>
+                  <NavLink to="/assign-user">SubId</NavLink>
                 </li>
                 <li>
                   <NavLink to="/campaign/hourly">Hourly</NavLink>

@@ -9,11 +9,17 @@ function Nav() {
   const showSidebar = () => {
     document.body.classList.toggle("menu-show");
   };
+
+  const time = new Date();
+  // Format date
+  const day = time.getDate();
+  const month = time.toLocaleString("default", { month: "long" });
+  const year = time.getFullYear();
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
+
   return (
-    <Navbar
-      expand="lg"
-      className="navbar-light p-0 pb-2 pb-md-0 mb-4 bg-white"
-    >
+    <Navbar expand="lg" className="navbar-light p-0 pb-2 pb-md-0 mb-4 bg-white">
       <Container fluid className="g-0 d-block">
         <Row className="flex-md-nowrap">
           <Col md={3} className="pe-0">
@@ -26,7 +32,7 @@ function Nav() {
               <div className="trends">
                 <h6 className="font-600 mb-1">Latest Trends</h6>
                 <p className="font-9 mb-0">
-                  Data till : 28 August, 2024 : 15:30 PM
+                  Data till : {day} {month} {year} : {hours}:{minutes} {hours >=12 ? "PM" : "AM"}
                 </p>
               </div>
             </div>

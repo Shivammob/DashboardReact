@@ -836,3 +836,60 @@ export const adAccountManagement = [
     actions: "",
   },
 ]
+
+export const manageCampaign = [
+  {
+    accountName: "Facebook",
+    campaignID: "Account 5",
+    campaignName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    accountName: "Google",
+    campaignID: "Account 1",
+    campaignName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    accountName: "Text",
+    campaignID: "Text",
+    campaignName: "Text",
+    actions: "",
+  },
+  {
+    accountName: "Facebook",
+    campaignID: "Account 5",
+    campaignName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    accountName: "Google",
+    campaignID: "Account 1",
+    campaignName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    accountName: "Text",
+    campaignID: "Text",
+    campaignName: "Text",
+    actions: "",
+  },
+  {
+    accountName: "Facebook",
+    campaignID: "Account 5",
+    campaignName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    accountName: "Google",
+    campaignID: "Account 1",
+    campaignName: "John Doe, Jane Smith, +2 More",
+    actions: "",
+  },
+  {
+    accountName: "Text",
+    campaignID: "Text",
+    campaignName: "Text",
+    actions: "",
+  },
+]
