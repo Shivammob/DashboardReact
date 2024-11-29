@@ -12,7 +12,7 @@ function MutliSelect({options}) {
       // Function to handle assignment
       const handleAssignUsers = () => {
         const assignedUsers = selectedOptions.map((option) => option.value);
-        console.log("Assigned Users:", assignedUsers);
+        // console.log("Assigned Users:", assignedUsers);
       };
   return (
     <div className="mb-4">

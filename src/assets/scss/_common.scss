@@ -1288,13 +1288,22 @@ table {
     width: 60vw;
     height: 140px;
     padding: 10px;
+    .css-1p3m7a8-multiValue {
+        background: #eeeeee;
+        border-radius: 4px;
+        border: 1px solid;
+      }
+    
+      .css-9jq23d {
+        font-size: 100%;
+      }
   }
 
   .select__indicators.css-1wy0on6 {
     align-items: start;
   }
 
-
+  
   @media only screen and (max-width: 475px) {
     .select__value-container.select__value-container--is-multi{
         width: 100%;
