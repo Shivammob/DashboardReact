@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import signin from "@/assets/images/signin/sign_in.png";
@@ -7,16 +7,44 @@ import showPasswordImg from "@/assets/images/show_password.svg";
 import { NavLink } from "react-router-dom";
 
 function SignIn() {
+  // const [data, setData] = useState([]);
   const [passIcon, setPassIcon] = useState({ pass1: false });
+
+  // useEffect(()=> {
+  //   const fetchData = async () => {
+  //     const response = await fetch("http://localhost:5000/admin_master");
+  //     setData(await response.json());
+  //   }
+  //   fetchData();
+
+  // },[])
+
+  // console.log(data, "data")
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("http://localhost:5000/admin_master", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      console.log("Response from server:", result);
+      // Reset the form on successful submission
+      reset();
+    } catch (error) {
+      console.error("Error sending data to server:", error);
+    }
+    // console.log("Form Data:", data);
     alert("Form submitted successfully!");
   };
 
@@ -111,7 +139,7 @@ function SignIn() {
                         </p>
                       )}
                     </div>
-                    <button type="sunmit" className="btn primarybtn w-100">
+                    <button type="submit" className="btn primarybtn w-100">
                       Sign in
                     </button>
                   </form>
