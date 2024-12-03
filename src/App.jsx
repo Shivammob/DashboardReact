@@ -22,15 +22,17 @@ import AddNewArticle from "./components/AddNewArticle";
 import AdAccountManagement from "./components/AdAccountManagement";
 import ManageCampaign from "./components/ManageCampaign";
 import AssignUsers from "./components/AssignUsers";
+import SignUp from "./components/SignUp";
 
 function App() {
   const location = useLocation();
 
   const isSignInPage = location.pathname === "/sign-in";
+  const isSignUpPage = location.pathname === "/sign-up";
 
   return (
     <>
-        {isSignInPage ? <SigninHeader/> : <Header />}
+        {isSignInPage || isSignUpPage ? <SigninHeader/> : <Header />}
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/reports/overview" element={<OverviewReports />} />
@@ -46,8 +48,9 @@ function App() {
           <Route path="/manage-campaign" element={<ManageCampaign />}/>
           <Route path="/assign-user" element={<AssignUsers />}/>
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
         </Routes>
-        {isSignInPage && <Footer/>}
+        {isSignInPage || isSignUpPage && <Footer/>}
       </>
   );
 }
