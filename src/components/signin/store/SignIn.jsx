@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { signIn } from "../store/action/signinActions";
 import { useForm } from "react-hook-form";
 
 import signin from "@/assets/images/signin/sign_in.png";
@@ -6,9 +8,13 @@ import hidePasswordImg from "@/assets/images/hide_password.svg";
 import showPasswordImg from "@/assets/images/show_password.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Form, Button, InputGroup } from "react-bootstrap";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 function SignIn() {
+  const data = useSelector((state) => state.signin);
+  const dispatch = useDispatch();
+  const { loading, user, error } = data;
+  console.log(loading, user, error, "signin");
   // const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [passIcon, setPassIcon] = useState({ pass1: false });
@@ -21,31 +27,34 @@ function SignIn() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    try {
-      const response = await fetch("http://localhost:5000/sign_in", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-      console.log("Response from server:", result);
-      if (result.success) {
-        navigate("/");
-      } else {
-        console.log(result.error);
-        toast(result.error || "Login failed. Please try again.", {
-          progressStyle: { position: "top-right", backgroundColor: 'red', }
-        });
-      }
-    } catch (error) {
-      console.error("Error sending data to server:", error);
-    }
+    dispatch(signIn(data));
+    
     // console.log("Form Data:", data);
     // alert("Form submitted successfully!");
   };
+
+  useEffect(() => {
+    if(loading) {
+      toast.info(loading, {
+        progressStyle: { position: "top-right"},
+      });
+    }
+
+    else if(user) {
+      toast.success(user.message, {
+        progressStyle: { position: "top-right"},
+      });
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    }
+
+    else if(error) {
+      toast.error(error, {
+        progressStyle: { position: "top-right"},
+      });
+    }
+  }, [loading, user, error, navigate])
 
   const toggleIcon = (value) => {
     setPassIcon((prevState) => ({
@@ -66,7 +75,6 @@ function SignIn() {
                 </div>
               </div>
               <div className="col-md-5 px-md-3 px-lg-5 mb-4">
-                
                 <div className="sign-right">
                   <h1 className="font-30">Welcome 👋</h1>
                   <p className="font-14 mb-4">

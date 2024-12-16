@@ -2,13 +2,12 @@ import React from "react";
 import Nav from "./Nav";
 import Sidebar from "./Sidebar";
 
-function Header() {
-
+function Header({handleSignOut}) {
 
   return (
     <header>
-      <Nav/>
-      <Sidebar/>
+      <Nav />
+      <Sidebar handleSignOut={handleSignOut}/>
     </header>
   );
 }

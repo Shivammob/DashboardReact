@@ -26,6 +26,9 @@ function Revenue() {
     credits: {
       enabled: false,
     },
+    accessibility: {
+      enabled: false,
+    },
     pane: {
       startAngle: -90,
       endAngle: 90,

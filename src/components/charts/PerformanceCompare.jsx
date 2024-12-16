@@ -19,7 +19,9 @@ function PerformanceCompare() {
     credits: {
       enabled: false,
     },
-
+    accessibility: {
+      enabled: false,
+    },
     xAxis: {
       // title: {
       //     text: 'X Axis Title'

@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require("express-session");
 const mysql = require('mysql');
 const bodyParser =  require('body-parser');
 const cors = require('cors');
@@ -8,7 +9,21 @@ const app = express();
 const port = 5000;
 const saltRounds = 10;
 
-app.use(cors());
+
+app.use(
+    cors({
+      origin: "http://localhost:5173", 
+      credentials: true, 
+    })
+  );
+app.use(
+    session({
+      secret: "cec48390bfce7ee2e747a444ecb8598c", 
+      resave: false,
+      saveUninitialized: true,
+      cookie: { secure: false }, 
+    })
+  );
 app.use(bodyParser.json());
 
 
@@ -85,7 +100,6 @@ app.post('/sign_up', (req, res) => {
 app.post('/sign_in', (req, res) => {
     const { email, password } = req.body;
     
-    // SQL query to check for user in the database
     const checkSql = 'SELECT * FROM admin_master WHERE email_id = ?';
     
     db.query(checkSql, [email], (err, results) => {
@@ -94,8 +108,8 @@ app.post('/sign_in', (req, res) => {
         }
         
         if (results.length > 0) {
-            const storedHashedPassword = results[0].password; // Get the user data
-
+            const storedHashedPassword = results[0].password;
+            
             // Compare the provided password with the stored hashed password
             bcrypt.compare(password, storedHashedPassword, (err, isMatch) => {
                 if (err) {
@@ -104,10 +118,11 @@ app.post('/sign_in', (req, res) => {
 
                 if (isMatch) {
                     if(results[0].status == 1){
+                        req.session.user = results[0];
                         return res.status(200).json({
                             message: 'Login successful',
                             success: true,
-                            user: results,
+                            user: results[0],
                         });
                     }else{
                         return res.status(401).json({
@@ -126,6 +141,36 @@ app.post('/sign_in', (req, res) => {
                 error: 'Invalid email'
             });
         }
+    });
+});
+
+
+app.get("/user", (req, res) => {
+    if (req.session.user) {
+      return res.status(200).json({
+        message_user: "User data fetched successfully",
+        success: true,
+        user: req.session.user,
+      });
+    } else {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+  });
+
+
+  app.post('/sign_out', (req, res) => {
+    // Destroy the session
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).json({ error: 'Failed to sign out', details: err });
+        }
+
+        res.clearCookie('connect.sid'); 
+
+        return res.status(200).json({
+            message_logout: 'Sign out successful',
+            success: true,
+        });
     });
 });
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import logo from "@/assets/images/logo.svg";
 import dashboardIcon from "@/assets/images/dashboard.svg";
@@ -19,8 +19,16 @@ import logOut from "@/assets/images/log_out.svg";
 import logOutHover from "@/assets/images/log_out_1.svg";
 import switchAccount from "@/assets/images/switch_account.svg";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { handleSignOut } from "../signin/store/action/signinActions";
+import { ToastContainer, toast } from "react-toastify";
 
 function Sidebar() {
+  const data = useSelector((state) => state.signin);
+  const dispatch = useDispatch();
+  const {user, error} = data;
+   console.log(user, "sidebar")
+
   const [openSection, setOpenSection] = useState({
     section1: false,
     section2: false,
@@ -37,12 +45,32 @@ function Sidebar() {
     // console.log(section, "s")
   };
 
+  const signOut = () => {
+    dispatch(handleSignOut());
+  }
+
+  useEffect(() => {
+  
+    if(user) {
+      toast.success(user.message_logout, {
+        progressStyle: { position: "top-right"},
+      });
+    }
+
+    else if(error) {
+      toast.error(error, {
+        progressStyle: { position: "top-right"},
+      });
+    }
+  }, [user, error])
+
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
 
   return (
-    <div className="sidebar">
+    <>
+      <div className="sidebar">
       <NavLink to="/">
         <img
           src={logo}
@@ -338,8 +366,9 @@ function Sidebar() {
             Add New Account
           </NavLink>
         </div>
+        
         <div className="sidebar-menu-list mb-2">
-          <NavLink to="/sign-in" className="sidebar-menu-list-item">
+          <NavLink to="/sign-in" onClick={signOut} className="sidebar-menu-list-item">
             <img
               src={logOut}
               alt="logout account"
@@ -355,6 +384,8 @@ function Sidebar() {
         </div>
       </div>
     </div>
+    <ToastContainer theme="dark" position="top-right" />
+    </>
   );
 }
 

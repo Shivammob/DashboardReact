@@ -51,6 +51,9 @@ function TeamReportTree() {
     credits: {
       enabled: false,
     },
+    accessibility: {
+      enabled: false,
+    },
   };
   return (
     <figure className="highcharts-figure mb-0">

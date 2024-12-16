@@ -54,6 +54,9 @@ function TeamReport() {
     credits: {
       enabled: false,
     },
+    accessibility: {
+      enabled: false,
+    },
   };
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 }

@@ -20,6 +20,9 @@ function TotalRevenue() {
     credits: {
       enabled: false,
     },
+    accessibility: {
+      enabled: false,
+    },
 
     xAxis: {
       categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],

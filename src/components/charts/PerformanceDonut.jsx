@@ -15,11 +15,13 @@ function PerformanceDonut() {
     credits: {
       enabled: false,
     },
+
     subtitle: {
       text: "A visual breakdown of domain performance across ad campaigns.",
       align: "left",
     },
     accessibility: {
+      enabled: false,
       point: {
         valueSuffix: "%",
       },

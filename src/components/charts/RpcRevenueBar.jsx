@@ -21,6 +21,9 @@ function RpcRevenueBar() {
     credits: {
         enabled: false
     },
+    accessibility: {
+      enabled: false,
+    },
     subtitle: {
         text: 'Past 2 weeks',
         align: 'left',
