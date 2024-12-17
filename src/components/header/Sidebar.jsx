@@ -19,7 +19,6 @@ import logOut from "@/assets/images/log_out.svg";
 import logOutHover from "@/assets/images/log_out_1.svg";
 import switchAccount from "@/assets/images/switch_account.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import { useToast } from "../context/ToastContext";
 
 function Sidebar() {
@@ -42,6 +41,7 @@ function Sidebar() {
 
   const signOut = async (e) => {
     e.preventDefault();
+    document.body.classList.remove("menu-show");
     try {
       const response = await fetch("http://localhost:5000/sign_out", {
         method: "POST",

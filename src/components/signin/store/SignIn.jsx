@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import signin from "@/assets/images/signin/sign_in.png";
 import hidePasswordImg from "@/assets/images/hide_password.svg";
 import showPasswordImg from "@/assets/images/show_password.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Form, Button, InputGroup } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 import { useToast } from "../../context/ToastContext";
 
 function SignIn() {
