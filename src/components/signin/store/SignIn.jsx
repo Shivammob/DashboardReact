@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { signIn } from "../store/action/signinActions";
 import { useForm } from "react-hook-form";
 
 import signin from "@/assets/images/signin/sign_in.png";
@@ -8,16 +6,12 @@ import hidePasswordImg from "@/assets/images/hide_password.svg";
 import showPasswordImg from "@/assets/images/show_password.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Form, Button, InputGroup } from "react-bootstrap";
-import { ToastContainer, toast } from "react-toastify";
+import { useToast } from "../../context/ToastContext";
 
 function SignIn() {
-  const data = useSelector((state) => state.signin);
-  const dispatch = useDispatch();
-  const { loading, user, error } = data;
-  console.log(loading, user, error, "signin");
-  // const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [passIcon, setPassIcon] = useState({ pass1: false });
+  const toast = useToast();
 
   const {
     register,
@@ -26,35 +20,42 @@ function SignIn() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    dispatch(signIn(data));
-    
-    // console.log("Form Data:", data);
-    // alert("Form submitted successfully!");
+  const onSubmit = async (userData) => {
+    try {
+      const response = await fetch("http://localhost:5000/sign_in", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(userData),
+      });
+
+      const result = await response.json();
+     
+      if (result.success) {
+        const user = result.user;
+        localStorage.setItem("emailId", user.email_id);
+        localStorage.setItem("name", user.name);
+        localStorage.setItem("id", user.id);
+        localStorage.setItem("createdAt", user.created_at);
+        localStorage.setItem("status", user.status);
+        localStorage.setItem("type", user.type);
+        toast.success(result.message || "Sucessfully Logged In");
+        setTimeout(() => {
+          navigate("/");
+        }, 2000)
+      } else {
+        toast.error(result.error || "Error while logging in");
+      }
+    } catch (error) {
+      // toast("Error sending data to server:", error, {
+      //   progressStyle: { position: "top-right", backgroundColor: "red" },
+      // });
+      toast.error("Error sending data to server");
+    }
   };
 
-  useEffect(() => {
-    if(loading) {
-      toast.info(loading, {
-        progressStyle: { position: "top-right"},
-      });
-    }
-
-    else if(user) {
-      toast.success(user.message, {
-        progressStyle: { position: "top-right"},
-      });
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-    }
-
-    else if(error) {
-      toast.error(error, {
-        progressStyle: { position: "top-right"},
-      });
-    }
-  }, [loading, user, error, navigate])
 
   const toggleIcon = (value) => {
     setPassIcon((prevState) => ({
@@ -152,7 +153,6 @@ function SignIn() {
           </div>
         </div>
       </section>
-      <ToastContainer theme="dark" position="top-right" />
     </main>
   );
 }

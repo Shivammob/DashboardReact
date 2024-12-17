@@ -4,18 +4,16 @@ import latestTrends from "@/assets/images/latest_trends.svg";
 import notificationBell from "@/assets/images/notification_bell.svg";
 import activeProfile from "@/assets/images/active_profile.svg";
 import { Col, Container, Navbar, Row } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
 
 function Nav() {
-  // console.log(user, "nav")
-  const data = useSelector((state) => state.signin);
-  // const dispatch = useDispatch();
-// console.log(data, "nav thios")
-
-  // let userRole = user?.type === 1 ? "Super Admin" : "Admin";
+ 
   const showSidebar = () => {
     document.body.classList.toggle("menu-show");
   };
+
+  let name = localStorage.getItem("name");
+  let role = localStorage.getItem("type");
+  let userRole = role === "1" ? "Super Admin" : "Admin";
 
   const time = new Date();
   // Format date
@@ -112,9 +110,9 @@ function Nav() {
                       className="img-fluid"
                     />
                     <div className="user-login-detail mx-3 text-start">
-                      <h6 className="mb-1 font-500">Kunal Kothari</h6>
+                      <h6 className="mb-1 font-500">{name}</h6>
                       <span className="d-block font-10 text-start">
-                        SuperAdmin
+                        {userRole}
                       </span>
                     </div>
                   </Dropdown.Toggle>

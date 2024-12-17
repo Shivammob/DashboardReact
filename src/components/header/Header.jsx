@@ -1,13 +1,21 @@
 import React from "react";
 import Nav from "./Nav";
 import Sidebar from "./Sidebar";
+import SigninHeader from "./SigninHeader";
+import { useLocation } from "react-router-dom";
 
-function Header({handleSignOut}) {
+function Header() {
+  const location = useLocation();
 
-  return (
+  const isSignInPage = location.pathname === "/sign-in";
+  const isSignUpPage = location.pathname === "/sign-up";
+
+  return isSignInPage || isSignUpPage ? (
+    <SigninHeader />
+  ) : (
     <header>
       <Nav />
-      <Sidebar handleSignOut={handleSignOut}/>
+      <Sidebar />
     </header>
   );
 }

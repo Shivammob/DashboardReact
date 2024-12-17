@@ -12,8 +12,7 @@ function SigninHeader() {
   return (
     <Navbar
       expand="md"
-      className="navbar-log position-relative navbar-light ms-0 py-3"
-    >
+      className="navbar-log position-relative navbar-light ms-0 py-3">
        <div className="navbar-wrap d-flex align-items-center justify-content-between flex-wrap">
         <Navbar.Brand className="" href="#">
           {" "}
