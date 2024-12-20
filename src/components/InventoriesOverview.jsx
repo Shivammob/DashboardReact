@@ -13,7 +13,7 @@ function InventoriesOverview() {
               <div className="inventory">
                 <div className="inventory-heading d-flex justify-content-between align-items-center flex-wrap mb-4">
                   <h1 className="mb-0">Overview</h1>
-                  <a href="javascript:void(0)" className="btn primarybtn mb-2">
+                  <a href="#" onClick={(e) => e.preventDefault()} className="btn primarybtn mb-2">
                     <i className="fa-solid fa-plus pe-1"></i> Add Inventories
                   </a>
                 </div>
@@ -36,7 +36,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -94,7 +94,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -119,7 +119,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -177,7 +177,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -202,7 +202,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -260,7 +260,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -285,7 +285,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -343,7 +343,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -368,7 +368,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -426,7 +426,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -451,7 +451,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -509,7 +509,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -534,7 +534,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -592,7 +592,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -617,7 +617,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -675,7 +675,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More
@@ -700,7 +700,7 @@ function InventoriesOverview() {
                               </h6>
                               <p className="font-10 mb-0">
                                 www.findmyresponse.com{" "}
-                                <a href="javascript:void(0)">
+                                <a href="#" onClick={(e) => e.preventDefault()}>
                                   <img
                                     src={copy}
                                     alt="copy"
@@ -758,7 +758,7 @@ function InventoriesOverview() {
                             Want to post an article?
                           </p>
                           <a
-                            href="javascript:void(0)"
+                            href="#" onClick={(e) => e.preventDefault()}
                             className="btn primarybtn py-2 px-3 mb-2"
                           >
                             View More

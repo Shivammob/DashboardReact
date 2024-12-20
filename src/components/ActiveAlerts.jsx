@@ -41,7 +41,7 @@ function ActiveAlerts() {
                     <div className="d-flex justify-content-between mb-2">
                       <div className="notify-acc-head">
                         <h4 className="font-600">Active Alerts</h4>
-                        <p className="mb-0">Where action meets opportunity.</p>
+                        <p className="">Where action meets opportunity.</p>
                       </div>
                       <div className="d-flex align-items-center">
                         <a href="#" onClick={(e) => e.preventDefault()}>

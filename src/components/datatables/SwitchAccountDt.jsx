@@ -5,6 +5,7 @@ import ActionsCell from "./ActionsCell";
 import SwitchToCell from "./SwitchToCell";
 import { switchUsers } from "@/components/db";
 import useDatatableSort from "@/components/hooks/useDatatableSort";
+import DatatableExportBtn from "./DatatableExportBtn";
 
 const { Column, HeaderCell, Cell } = Table;
 
@@ -72,11 +73,19 @@ function SwitchAccountDt({ activeUserID, setActiveUserID, onSwitchAccount }) {
     searchKeyword,
     sortColumn,
     sortType,
+    exportToCSV,
+    exportToPDF,
+    printTable,
     totalItems,
   } = useDatatableSort(switchUsers, itemsPerPage);
 
   return (
     <>
+      <DatatableExportBtn
+        exportToCSV={exportToCSV}
+        exportToPDF={exportToPDF}
+        printTable={printTable}
+      />
       <div className="table-responsive">
         <InputGroup inside className="mb-4 rs-dt-search">
           <Input

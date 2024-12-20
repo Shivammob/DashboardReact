@@ -124,8 +124,7 @@ function SignIn() {
                         <InputGroup.Text
                           onClick={() => toggleIcon("pass1")}
                           style={{ cursor: "pointer" }}
-                          className="p-1"
-                        >
+                          className="p-1">
                           <img
                             src={
                               passIcon.pass1 ? showPasswordImg : hidePasswordImg

@@ -5,6 +5,7 @@ import {
   Route,
   Link,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import OverviewReports from "./components/OverviewReports";
@@ -22,11 +23,30 @@ import AdAccountManagement from "./components/AdAccountManagement";
 import ManageCampaign from "./components/ManageCampaign";
 import AssignUsers from "./components/AssignUsers";
 import SignUp from "./components/SignUp";
+import { useEffect } from "react";
 
 function App() {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const userExist = !!localStorage.getItem("emailId")
+  
+
+  useEffect(()=> {
+    if (userExist && location.pathname === "/sign-in" || userExist && location.pathname === "/sign-up") {
+      navigate(-1);
+    }
+    else if (!userExist && location.pathname === "/sign-up") {
+      navigate("/sign-up");
+    }
+    else if (!userExist && location.pathname !== "/sign-in") {
+      navigate("/sign-in");
+    }
+  }, [userExist, navigate])
+ 
+
 
   return (
-    <Router>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Dashboard />} />
@@ -49,7 +69,7 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 

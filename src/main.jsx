@@ -1,4 +1,12 @@
 import { StrictMode } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import store from "./components/redux/store.js";
@@ -13,11 +21,13 @@ import { ToastProvider } from "./components/context/ToastContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ToastProvider>
+  <Router>
+  <ToastProvider>
       <Provider store={store}>
         <App />
         <ToastContainer theme="dark" position="top-right" newestOnTop />
       </Provider>
     </ToastProvider>
+  </Router>
   </StrictMode>
 );
