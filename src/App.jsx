@@ -1,4 +1,5 @@
 import Header from "./components/header/Header";
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,6 +30,8 @@ function App() {
   const location = useLocation()
   const navigate = useNavigate()
   const userExist = !!localStorage.getItem("emailId")
+
+  const [data, setData] = useState(null);
   
 
   useEffect(()=> {
@@ -42,8 +45,31 @@ function App() {
       navigate("/sign-in");
     }
   }, [userExist, navigate])
+
+
+
+  useEffect(() => {
+    fetch('http://localhost:5000/graph')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+    
+  }, [])
+  
  
 
+  console.log(data?.map((user) => user), "data")
+
+  
 
   return (
     <>

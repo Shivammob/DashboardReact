@@ -66,7 +66,9 @@ function useDatatableSort(data, itemsPerPage = 10) {
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.setAttribute("download", filename);
+    let fname = filename.view.location.pathname;
+    link.setAttribute("download", fname);
+    console.log(fname.replace(/\//g, ""), "file")
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

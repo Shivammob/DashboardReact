@@ -183,6 +183,22 @@ app.post("/sign_out", (req, res) => {
   });
 });
 
+
+app.get("/graph", (req, res) => {
+  db.query("SELECT * FROM report_subid_hourly", (err, data) => {
+    if (err) {
+      console.error("Query error:", err);
+      return res.status(500).json({ error: "Database query failed", details: err });
+    }
+    res.json(data);
+  });
+});
+
+
+
+
+
+
 app.listen(port, () => {
   console.log("listening");
 });

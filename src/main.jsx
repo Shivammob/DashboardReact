@@ -17,17 +17,16 @@ import "react-toastify/dist/ReactToastify.css";
 import "./assets/scss/style.scss";
 import App from "./App.jsx";
 import { ToastContainer } from "react-toastify";
-import { ToastProvider } from "./components/context/ToastContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
   <Router>
-  <ToastProvider>
+  {/* <ToastProvider> */}
       <Provider store={store}>
         <App />
         <ToastContainer theme="dark" position="top-right" newestOnTop />
       </Provider>
-    </ToastProvider>
+    {/* </ToastProvider> */}
   </Router>
   </StrictMode>
 );

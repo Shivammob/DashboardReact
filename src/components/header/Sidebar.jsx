@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 import Collapse from "react-bootstrap/Collapse";
 import logo from "@/assets/images/logo.svg";
 import dashboardIcon from "@/assets/images/dashboard.svg";
@@ -19,11 +20,11 @@ import logOut from "@/assets/images/log_out.svg";
 import logOutHover from "@/assets/images/log_out_1.svg";
 import switchAccount from "@/assets/images/switch_account.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useToast } from "../context/ToastContext";
+// import { useToast } from "../context/ToastContext";
 
 function Sidebar() {
   const navigate = useNavigate();
-  const toast = useToast();
+  // const toast = useToast();
   const [openSection, setOpenSection] = useState({
     section1: false,
     section2: false,
