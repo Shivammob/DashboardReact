@@ -11,7 +11,7 @@ const DropdownPortal = ({ children }) =>
 function ActionsCell({ rowData, dataKey, clickHandle, ...props}) {
   
   return (
-    <Cell {...props} className="text-center msss">
+    <Cell {...props} className="text-center">
       <ul className="mb-0 ps-0 pe-4 d-flex align-items-center">
         <li className="pe-4">
           <button
